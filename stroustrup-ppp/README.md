@@ -1,44 +1,16 @@
-# Exercises from "Programming &ndash; Principles and Practice using C++" by Stroustrup
+# stroustrup-ppp
+Chapter work from Bjarne Stroustrup's [Programming Principles and Practice Using C++](https://www.amazon.com/Programming-Principles-Practice-Using-2nd/dp/0321992784/) textbook.
 
-Exercises from Stroustrup's ["Programming &ndash; Principles and Practice Using
-C++" (First Edition)][1]. Some sample solutions by Stroustrup can be found
-[here][2]. The directory `ppt_slides` contains the *old* version of the slides
-on [Stroustrup's website][3], as the current ones are updated for the 2nd
-edition of the book and C++11. In `code_snippets` are all the code examples in
-the book, taken from [the book's website][4].
+![cover of text](https://images-na.ssl-images-amazon.com/images/I/51j679vpDGL._SX406_BO1,204,203,200_.jpg)
 
-[1]: <https://www.informit.com/store/programming-principles-and-practice-using-c-plus-plus-9780321543721>
-[2]: <https://www.stroustrup.com/Programming/Solutions/exercise_solutions.html>
-[3]: <https://www.stroustrup.com/PPP2slides.html>
-[4]: <https://www.stroustrup.com/programming1.html>
+## Current Status:
+*June 25, 2018*
+Initial pass through the book is complete. The final two chapters received less attention than others due to their content being covered through other resources, namely the study of [K & R](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_1?s=books&ie=UTF8&qid=1529961639&sr=1-1&keywords=the+c+programming+language) for learning C and daily use of [Catch2](https://github.com/catchorg/Catch2) for testing.
 
-I was working with Visual Studio 2013 Express for Chapters 1&ndash;18, then I
-changed to [Code::Blocks][5]. Everything I've uploaded here was tested to
-compile in Code::Blocks using [MinGW][6] GCC 4.8.1. From Chapter 21 on, I
-switched to Visual Studio Community 2013.
+I'll now turn my attention to completing the quality assessment I had started in February. As of this writing I am completing work on the end of Part I - The Basics.
 
-[5]: <https://www.codeblocks.org>
-[6]: <https://mingw.osdn.io>
+### Contributions
+For anyone who is working through the textbook themselves and has questions about any particular exercise solution, either why something works or if you've found a bug I've missed, feel free to open an issue. I look forward to the opportunity for discussion.
 
-Notice that some solutions require using an older C++ standard when compiling,
-for example Chapter 17, exercise 4: use something like
-
-```sh
-g++ --std=c++03
-```
-
-to compile (under Linux).
-
-Chapter 1 has no programming exercises, and for Chapter 2 I just went along and
-changed the same file over and over, so these solutions are not here.
-
-Chapters 12&ndash;16 deal with GUI/graphics and use [FLTK][7]. The actual work
-there is not in the files containing `main`, but in `lib_files/Graph.cpp` and
-`lib_files/Simple_window.cpp`. I've done a little write-up about setting up
-FLTK under Visual Studio Community 2013 [here][8]; Philipp has created an
-updated version of that (for FLTK 1.3.4 and Visual Studio 2017) on [his
-website][9].
-
-[7]: <https://www.fltk.org/index.php>
-[8]: <https://www.benjaminwuethrich.dev/2014-12-25-installing-fltk-133-under-visual-studio.html>
-[9]: <https://bumpyroadtocode.com/2017/08/29/how-to-install-and-use-fltk-1-3-4-in-visual-studio-2017-complete-guide-2-0-no-cross-contamination/>
+## Hunt the Wumpus
+At the end of chapter 18 we are tasked with implementing the classic game, Hunt the Wumpus. As I continue to evolve my solution I have moved it to a separate repository found [here](https://github.com/Chrinkus/wumpus).
