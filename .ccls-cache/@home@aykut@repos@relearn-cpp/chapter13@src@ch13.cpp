@@ -24,8 +24,33 @@ int main() {
         grid.add(Point{0, y}, Point{x_size,y});  // horizontal line
     grid.set_color(Color::red);
     grid.set_style(Line_style{Line_style::dash, 2});
-
     win1.attach(grid);
+
+    Open_polyline opl = {
+        {200, 200}, {300, 400}, {500, 500}, {600, 400}
+    };
+    // Open_polyline opl;
+    // Polygon poly = {
+    //     {200, 200}, {300, 400}, {500, 500}, {600, 400}
+    // };
+    // poly.add(Point{300,200});
+    // poly.add(Point{350,100});
+    // poly.add(Point{400,200});
     
+    // Lines poly = {
+    //     {Point{100,100}, Point{200,100}},
+    //     {Point{150,50}, Point{150,150}}
+    // };
+    // Lines x = {
+    //     {{100,100}, {200,100}},
+    //     {{150,50}, {150,150}}
+    // };
+    // Closed_polyline cpl = {
+    //     {200, 200}, {300, 400}, {500, 500}, {600, 400}
+    // };
+    // win1.attach(cpl);
+    
+    win1.attach(opl);
+
     win1.wait_for_button();
 }

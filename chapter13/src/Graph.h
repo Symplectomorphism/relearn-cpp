@@ -232,7 +232,9 @@ bool intersect(Point p1, Point p2, Point p3, Point p4);
 
 
 struct Open_polyline : Shape {	// open sequence of lines
-	using Shape::Shape;
+	// using Shape::Shape;
+    Open_polyline() {};
+    Open_polyline(initializer_list<Point> lst) : Shape(lst) {};
 	void add(Point p) { Shape::add(p); }
 	void draw_lines() const;
 };
@@ -251,7 +253,7 @@ struct Polygon : Closed_polyline {	// closed sequence of non-intersecting lines
 	void draw_lines() const;
 };
 
-struct Lines : Shape {	// indepentdent lines
+struct Lines : Shape {	// independent lines
 	Lines() {}
 	Lines(initializer_list<Point> lst) : Shape{lst} { if (lst.size() % 2) error("odd number of points for Lines"); }
 	void draw_lines() const;
