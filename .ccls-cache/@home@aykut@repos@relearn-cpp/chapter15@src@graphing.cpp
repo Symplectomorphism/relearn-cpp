@@ -4,6 +4,7 @@
 double one(double) { return 1; }
 double slope(double x) { return x/2; }
 double square(double x) { return x*x; }
+double sloping_cos(double x) { return cos(x) + slope(x); }
 
 int main() {
     constexpr int xmax = 1200;
@@ -29,10 +30,16 @@ int main() {
     Function s {one, r_min, r_max, orig, n_points, x_scale, y_scale};
     Function s2 {slope, r_min, r_max, orig, n_points, x_scale, y_scale};
     Function s3 {square, r_min, r_max, orig, n_points, x_scale, y_scale};
+    Function s4 {cos, r_min, r_max, orig, n_points, x_scale, y_scale};
+    s4.set_color(Color::blue);
+    Function s5 {sloping_cos, r_min, r_max, orig, n_points, x_scale, y_scale};
+    s5.set_color(Color::green);
 
     win.attach(s);
     win.attach(s2);
     win.attach(s3);
+    win.attach(s4);
+    win.attach(s5);
 
     Text ts {Point{100, y_orig-40}, "one"};
     Text ts2 {Point{100, y_orig+y_orig/2+10}, "x/2"};
@@ -48,6 +55,8 @@ int main() {
         ylength, ylength/y_scale, "one_notch=1"};
     x.set_color(Color::red);
     y.set_color(Color::red);
+    x.label.move(-320,0);
+    x.notches.set_color(Color::dark_red);
 
     win.attach(x);
     win.attach(y);
