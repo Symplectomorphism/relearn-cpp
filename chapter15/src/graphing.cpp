@@ -66,3 +66,5 @@ int main() {
 
     return 0;
 }
+
+/* To compile: g++ *.cpp `fltk-config --ldflags --use-images` -o graphing */
