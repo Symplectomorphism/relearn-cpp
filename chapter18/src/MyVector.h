@@ -6,7 +6,7 @@ class MyVector {
     double* elem;                       // the pointer to the first element (of
                                         // type double)
     public: 
-        MyVector(int s);                // constructor 1        
+        explicit MyVector(int s);                // constructor 1        
         MyVector(initializer_list<double> lst); // constructor 2
         ~MyVector() { delete[] elem; }  // destructor: free memory
 
