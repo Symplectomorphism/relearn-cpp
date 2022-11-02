@@ -20,4 +20,7 @@ class MyVector {
 
         double get(int n) const { return elem[n]; }
         void set(int n, double v) { elem[n] = v; }
+
+        double& operator[](int n) { return elem[n]; }        // return reference
+        double operator[](int n) const { return elem[n]; }   // for const vectors 
 };
