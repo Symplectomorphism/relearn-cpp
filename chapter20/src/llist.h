@@ -135,6 +135,7 @@ void List<Elem>::print()
 {
     for (iterator p=begin(); p!=end(); ++p)
         std::cout << *p << " ";
+    std::cout << "\n";
 }
 
 template<typename Iterator>
