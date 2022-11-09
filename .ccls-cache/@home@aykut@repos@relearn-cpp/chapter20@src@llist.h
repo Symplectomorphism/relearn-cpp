@@ -91,6 +91,22 @@ class List<Elem>::iterator
 };
 
 template<typename Elem>
+typename List<Elem>::iterator List<Elem>::insert(List<Elem>::iterator p, const Elem& v)
+{
+    Link<Elem>* q = new Link<Elem>{v, p->prev};
+
+    if (p->succ) q->succ = p->succ->prev;
+    else q->succ = last;
+    p->prev = q;
+
+    if (q->prev) q->prev->succ = q;
+    else first = q;
+
+    ++sz;
+    return iterator{q};
+}
+
+template<typename Elem>
 void List<Elem>::push_front(const Elem& v)
 {
     Link<Elem>* p = new Link<Elem> {v};
